@@ -10,7 +10,7 @@ import { movieInfo } from 'src/models/movieInfo.interface';
 })
 export class ListComponent {
 
-  private moviesUrl:string = "https://api.themoviedb.org/3/movie/550?api_key=adf9ace52556c56fcb0427073575519e"
+  private moviesUrl:string = "https://api.themoviedb.org/3/movie/550?api_key="
   public movie:string = ""
 
   constructor(private http: HttpClient) { }
