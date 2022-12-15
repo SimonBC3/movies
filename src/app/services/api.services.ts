@@ -9,7 +9,7 @@ import { MovieInfo } from "src/models/movieInfo.interface";
 
 export class ApiService {
 
-    private moviesUrl:string = "https://api.themoviedb.org/3/discover/movie?api_key=adf9ace52556c56fcb0427073575519e"
+    private moviesUrl:string = "https://api.themoviedb.org/3/discover/movie?api_key="
 
     constructor(private http:HttpClient) {}
 
