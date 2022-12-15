@@ -1,4 +1,4 @@
-export interface languages {
+export interface Languages {
     english_name: string,
     iso_639_1: string,
     name: string

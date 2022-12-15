@@ -1,4 +1,4 @@
-export interface companies {
+export interface Companies {
     id: Int32Array,
     logo_path: string,
     name: string,

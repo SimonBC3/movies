@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { movieInfo } from 'src/models/movieInfo.interface';
+import { MovieInfo } from 'src/models/movieInfo.interface';
+import { ApiService } from 'src/app/services/api.services'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
-
-  private moviesUrl:string = "https://api.themoviedb.org/3/movie/550?api_key="
-  public movie:string = ""
-
-  constructor(private http: HttpClient) { }
-
-  getMovies(): Observable<movieInfo[]> {
-  return this.http.get<movieInfo[]>(this.moviesUrl)
+export class ListComponent implements OnInit {
+  //movie: MovieInfo;
+  selectedMovie?: MovieInfo;
+  movies?: MovieInfo[];
+  constructor(private api: ApiService, private router:Router) { }
+  
+  ngOnInit(): void {
+    this.api.getMovies().subscribe(data => {
+      this.movies = data.results
+      console.log(this.movies)
+    })
   }
 
-  private movies = this.getMovies().subscribe( data => {
-    console.log(data)
-    console.log(process.env['TOKEN'])
-    this.movie = data[0].title
-  })
-  
+  onSelect(movie: MovieInfo): void {
+    this.router.navigate(['details', movie])
+  }
+
 }
