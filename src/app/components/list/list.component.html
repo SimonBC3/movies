@@ -1,2 +1,8 @@
-<p>list works!</p>
-<p> {{ movie }}<p>
+<ul class="movie table-hover">
+    <li *ngFor="let movie of movies">
+        <button [class.selected]="movie === selectedMovie" type="button" 
+        (click)="onSelect(movie)">
+        <span class="badge"> {{movie.title}} </span>
+        </button>
+    </li>
+</ul>
