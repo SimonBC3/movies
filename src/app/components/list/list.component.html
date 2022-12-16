@@ -1,8 +1,20 @@
-<ul class="movie table-hover">
-    <li *ngFor="let movie of movies">
-        <button [class.selected]="movie === selectedMovie" type="button" 
-        (click)="onSelect(movie)">
-        <span class="badge"> {{movie.title}} </span>
-        </button>
-    </li>
-</ul>
+<div id="search">
+    <mat-form-field>
+        <mat-label> Search for a movie...</mat-label>
+        <input #box (keyup.enter)="onKey(box.value)" matInput [formControl]="searchControl" placeholder="Search for a movie">
+        <mat-error *ngIf="notFound"> 
+            Couldnt find any movies matching your request
+        </mat-error>
+    </mat-form-field>
+</div>
+
+
+<div id="table">
+    <ul class="movie">
+        <li *ngFor="let movie of movies">
+            <button [class.selected]="movie === selectedMovie" type="button" (click)="onSelect(movie)">
+                <span class="badge"> {{movie.title}} </span>
+            </button>
+        </li>
+    </ul>
+</div>

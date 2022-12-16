@@ -63,3 +63,21 @@
 .movie .name {
     align-self: center;
 }
+
+.movie {
+    width: 75%;
+    margin: 25px;
+}
+
+#search { 
+    align-self: center;
+    margin: 25px;
+    width: 50%;
+}
+
+#table{
+    align-self: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}

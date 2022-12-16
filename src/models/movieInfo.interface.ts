@@ -10,7 +10,7 @@ export interface MovieInfo {
     budget: bigint;
     genres: Genre;
     homepage: string;
-    id: Int32Array;
+    id: number;
     imdb_id: string;
     original_language: string;
     original_title: string;
