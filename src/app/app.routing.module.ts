@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router';
 import * as path from 'path';
 import { ListComponent } from './components/list/list.component';
-import { DetailsComponent } from './views/details/details.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'list', pathMatch:'full'},

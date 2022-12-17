@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*App Components*/
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
+import { DetailsComponent } from './components/details/details.component';
 import { ApiService } from './services/api.services';
 import { AppRoutingModule, routingComponents } from './app.routing.module';
 
@@ -17,11 +18,14 @@ import { AppRoutingModule, routingComponents } from './app.routing.module';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule, MatCardHeader, MatCardSubtitle, MatCardContent, MatCardFooter } from '@angular/material/card'
+import { MatDivider } from '@angular/material/divider'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
+    DetailsComponent,
     routingComponents
   ],
   imports: [
@@ -33,7 +37,14 @@ import { MatButtonModule } from '@angular/material/button'
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatCardHeader,
+    MatCardSubtitle,
+    MatCardContent,
+    MatDivider,
+
+    MatCardFooter
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

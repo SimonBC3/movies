@@ -42,7 +42,7 @@
 
 .movie button:hover {
     color: white;
-    background-color: darkcyan;
+    background-color: #00014bfd;
     left: .1em;
 }
 
