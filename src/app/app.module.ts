@@ -19,7 +19,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule, MatCardHeader, MatCardSubtitle, MatCardContent, MatCardFooter } from '@angular/material/card'
-import { MatDivider } from '@angular/material/divider'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -39,12 +40,8 @@ import { MatDivider } from '@angular/material/divider'
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatCardHeader,
-    MatCardSubtitle,
-    MatCardContent,
-    MatDivider,
-
-    MatCardFooter
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

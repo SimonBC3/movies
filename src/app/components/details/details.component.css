@@ -1,0 +1,13 @@
+.a {
+    top:50%;
+    width:100%;
+    text-align:center;
+    position:fixed;
+}
+
+.details-card {
+    max-width: 600px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: justify;
+}

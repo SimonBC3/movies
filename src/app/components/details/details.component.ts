@@ -8,12 +8,13 @@ import { MovieInfo } from 'src/models/movieInfo.interface';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
- 
+  moviePoster?:string;
   movieInfo?: any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
   
   ngOnInit(): void {
     this.movieInfo = this.activatedRoute.snapshot.params
+    this.moviePoster = "https://image.tmdb.org/t/p/w500" + this.movieInfo.poster_path
   }
 
 }
