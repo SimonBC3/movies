@@ -1,7 +1,9 @@
-<div id="search">
-    <mat-form-field>
+<html lang="eng" class="html">
+<body>
+<div class="search-div">
+    <mat-form-field class="search">
         <mat-label> Search for a movie...</mat-label>
-        <input #box (keyup.enter)="onKey(box.value)" matInput [formControl]="searchControl" placeholder="Search for a movie">
+        <input  #box (keyup.enter)="onKey(box.value)" matInput [formControl]="searchControl" placeholder="Search for a movie">
         <mat-error *ngIf="notFound"> 
             Couldnt find any movies matching your request
         </mat-error>
@@ -9,12 +11,14 @@
 </div>
 
 
-<div id="table">
+<div id="list-div">
     <ul class="movie">
         <li *ngFor="let movie of movies">
-            <button [class.selected]="movie === selectedMovie" type="button" (click)="onSelect(movie)">
+            <button mat-raised-button [class.selected]="movie === selectedMovie" type="button" (click)="onSelect(movie)">
                 <span class="badge"> {{movie.title}} </span>
             </button>
         </li>
     </ul>
 </div>
+</body>
+</html>

@@ -16,6 +16,7 @@ import { AppRoutingModule, routingComponents } from './app.routing.module';
 /*Angular materials*/
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
