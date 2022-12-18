@@ -1,5 +1,6 @@
 .html {
     background-color: #e6e6e6;
+    height: max-content;
 }
 .search-div {
     margin: 0 auto;

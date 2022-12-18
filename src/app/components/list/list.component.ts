@@ -56,7 +56,7 @@ export class ListComponent implements OnInit {
   private loadData():void {
     this.api.getMovies().subscribe(data => {
       this.movies = data.results
-      console.log(this.movies)
+      console.log(this.movies[0])
     })
   }
 }
