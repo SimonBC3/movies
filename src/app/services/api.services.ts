@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { apiAnswer } from "src/models/apiAnswer.interface";
+import { ImageAnswer } from "src/models/imageAnswer.interface";
 import { MovieInfo } from "src/models/movieInfo.interface";
 
 @Injectable({
@@ -26,12 +27,14 @@ export class ApiService {
         if( typeof keyword == 'string' &&  !isNaN(parseInt(keyword))) {
             throw new Error('keyword must be a string')
         }        
-        let keywordQuery: string  = "&query=" + keyword
-        return this.http.get<apiAnswer>(this.moviesUrl + this.searchMovieUrl + this.token + keywordQuery)
+        return this.http.get<apiAnswer>(this.moviesUrl + this.searchMovieUrl + this.token + `&query=${keyword}`)
     }
 
     public getById(id: number): Observable<MovieInfo> {
-        console.log(this.moviesUrl + this.idUrl + id + this.token)
-        return this.http.get<MovieInfo>(this.moviesUrl + this.idUrl + id + this.token)
+        return this.http.get<MovieInfo>(this.moviesUrl + `/movie/${id}` + this.token)
+    }
+
+    public getImages(id:number) {
+        return this.http.get<ImageAnswer>(this.moviesUrl + `/movie/${id}/images` + this.token)
     }
 }
