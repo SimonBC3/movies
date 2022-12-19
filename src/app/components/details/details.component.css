@@ -1,28 +1,40 @@
 
 .card-div {
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    width: 40%;
     z-index: 1;
+    position: absolute;
+    height: 0%;
 }
 
 .img-div {
-    width: 1000px;
-    height: 1000px;
-    z-index: -1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+    z-index: 0;
 }
 
 .image {
-    
+    height: 600px;
 }
 
 .details-card {
-    max-width: 600px;
-    margin: 0 auto;
-    display: inline-block;
+    max-width: 800px;
+    height: fit-content;
     text-align: justify;
+    position: relative;
+    background-color: rgb(17, 12, 48);
+    color: white;
+    font-size: large;
+}
+
+.body {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6;
+    float: center;
+}
+
+.html {
+    background-color: black;
+    width: max-content;
+    height: max-content;
 }

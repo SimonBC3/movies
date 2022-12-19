@@ -34,6 +34,7 @@ export class ListComponent implements OnInit {
   }
 
   onSelect(movie: MovieInfo): void {
+    console.log(movie)
     this.router.navigate(['details', movie])
   }
 

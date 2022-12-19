@@ -1,15 +1,18 @@
-<html>
-<body>
-    <div class="card-div">
+<html class="html">
+<body class="body">
+    <div class="card-div" >
                 <mat-card class="details-card">
                     <mat-card-header>
-                       <mat-card-subtitle>Movie details</mat-card-subtitle>
+                       <mat-card-subtitle style="color: white;">Movie details</mat-card-subtitle>
                        <mat-card-title> {{movieInfo.title}}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                       <p> Released in {{ movieInfo.release_date }}</p>
-                       <p> Language: {{ movieInfo.original_language}}</p>
-                       <p> {{ movieInfo.overview}}</p>
+                        <p> {{ movieInfo.tagline }}</p>
+                        <p> Released in {{ movieInfo.release_date }}</p>
+                        <p> Rating: {{ movieInfo.vote_average }}</p>
+                        <p> {{ movieInfo.overview}}</p>
+                        <p> </p>
+                        <p> Original language: {{movieLanguages}} </p>
                     </mat-card-content>
                     </mat-card>
     </div>
