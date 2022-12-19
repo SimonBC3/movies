@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 
+## Requirements
+This code needs an api token from The movie database to run. It must be copied in the variable 'token' located in the file /src/app/services/api.services.ts .
+https://www.themoviedb.org/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
