@@ -18,6 +18,7 @@ export class DetailsComponent implements OnInit {
   movieImages?: MovieImages[];
   movieImageUrl?: string;
   movieLanguages?: string;
+  movieOverview?:string;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService, private location:Location) { }
 
@@ -31,7 +32,10 @@ export class DetailsComponent implements OnInit {
 
     this.apiService.getById(this.movieId).subscribe(data => {
       this.movieInfo = data
+      console.log(data)
+      this.movieOverview = data.overview
       this.updateLanguages(data.spoken_languages)
+      this.moviePoster = `https://image.tmdb.org/t/p/w500${this.movieInfo.poster_path}`
     })
   }
 

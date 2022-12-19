@@ -15,7 +15,7 @@ export class ApiService {
     private discoverUrl: string = "/discover/movie"
     private searchMovieUrl: string = "/search/movie"
     private idUrl: string = "/movie/"
-    private token:string = "?api_key="
+    private token:string = "?api_key=adf9ace52556c56fcb0427073575519e"
     
     constructor(private http:HttpClient) {}
 

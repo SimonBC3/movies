@@ -1,40 +1,99 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #e6e6e6;
+}
+.right-toppane {
+    width: 25%;
+    height: 100px;
+    background-color: #e6e6e6;
+    float: right;
+}
 
-.card-div {
-    z-index: 1;
-    position: absolute;
-    height: 0%;
+.center-toppane {
+    width: 50%;
+    height: 100px;
+    background-color: black;
+    float: center;
+    z-index: -1;
+}
+
+.left-toppane {
+    width: 25%;
+    height: 100px;
+    background-color: #e6e6e6;
+    float: left;
+}
+
+
+.toppane {
+    width: 100%;
+    height: 100px;
+    margin: 0 !important;
+}
+
+.leftpane {
+    width: 25%;
+    height: 100vh;
+    background-color: #e6e6e6;
+}
+
+.middlepane {
+    margin-top: 20px;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+}
+
+.rightpane {
+    width: 25%;
+    height: 100vh;
+    background-color: #e6e6e6;
+}
+
+body {
+    margin: 0 !important;
+}
+
+.d-flex {
+    display: flex;
+    background-color: #e6e6e6;
 }
 
 .img-div {
-    z-index: 0;
+    height: 100vh;
+    float: left;
 }
 
-.image {
-    height: 600px;
+.info-div {
+    float: left;
 }
 
-.details-card {
-    max-width: 800px;
-    height: fit-content;
-    text-align: justify;
-    position: relative;
-    background-color: rgb(17, 12, 48);
-    color: white;
-    font-size: large;
+.card-div{
+    margin-left: 70px;
 }
 
-.body {
+.matdivider-div {
+    object-fit: fill;
     width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e6e6e6;
-    float: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
 }
 
-.html {
-    background-color: black;
-    width: max-content;
-    height: max-content;
+mat-card {
+    width: 320px;
+    text-align: justify;
+}
+
+.genre-buttons {
+    margin: 10px;
+}
+.card-divider {
+    padding: 5px;
+}
+
+.rating-button{
+    width: 100%;
+    font-size: large;
 }

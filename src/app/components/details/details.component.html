@@ -1,24 +1,58 @@
-<html class="html">
-<body class="body">
-    <div class="card-div" >
-                <mat-card class="details-card">
-                    <mat-card-header>
-                       <mat-card-subtitle style="color: white;">Movie details</mat-card-subtitle>
-                       <mat-card-title> {{movieInfo.title}}</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p> {{ movieInfo.tagline }}</p>
-                        <p> Released in {{ movieInfo.release_date }}</p>
-                        <p> Rating: {{ movieInfo.vote_average }}</p>
-                        <p> {{ movieInfo.overview}}</p>
-                        <p> </p>
-                        <p> Original language: {{movieLanguages}} </p>
-                    </mat-card-content>
+<html class="html" style="background-color: #e6e6e6;">
+<body class="body" style="background-color: #e6e6e6;">
+    <div class="container">
+        <div class="d-flex" >
+          <div class="leftpane"></div>
+          <div class="middlepane">
+            <div class="img-div">
+                <img src={{moviePoster}}>
+            </div>
+            <div class="info-div">
+                <div class="card-div">
+                    <mat-card class="title-card">
+                        <mat-card-header>
+                            <mat-card-title style="text-transform: uppercase;">{{movieInfo.title}}</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <h3>{{movieInfo.tagline}}</h3>
+                        </mat-card-content>
                     </mat-card>
-    </div>
-    <div class="img-div">
-        <img class="image" mat-card-image src={{moviePoster}}>
-    </div>
-        
+                </div>
+                <div class="matdivider-div">
+                    <mat-divider ></mat-divider>
+                </div>
+                    <div class="card-div">
+                        <button class="rating-button" mat-raised-button color="warn"> Overall rating: {{movieInfo.vote_average}}</button>
+                    </div>
+                <div class="matdivider-div">
+                    <mat-divider ></mat-divider>
+                </div>
+                <div class="card-div">
+                    <mat-card>
+                        <mat-card-content *ngFor="let genreJson of movieInfo.genres">
+                            <button class="genre-buttons" mat-flat-button [disableRipple]="true"  color="primary"> {{genreJson.name}} </button>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="matdivider-div">
+                    <mat-divider ></mat-divider>
+                </div>
+                <div class="card-div">
+                    <mat-card class="overview-card">
+                        <mat-card-header>
+                            <mat-card-title>OVERVIEW</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p> {{movieInfo.overview}}</p>
+                            <mat-divider class="card-divider"></mat-divider>
+                            <p>Audio languages: {{movieLanguages}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+          </div>
+          <div class="rightpane"></div>
+        </div>
+      </div>
 </body>
 </html>
