@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { last } from 'rxjs';
+import { Location } from '@angular/common';
 import { ApiService } from 'src/app/services/api.services';
 import { Languages } from 'src/models/languages.interface';
 import { MovieImages } from 'src/models/movieImages.interface';
@@ -19,24 +19,20 @@ export class DetailsComponent implements OnInit {
   movieImageUrl?: string;
   movieLanguages?: string;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService, private location:Location) { }
 
   ngOnInit(): void {
-    this.movieInfo = this.activatedRoute.snapshot.params
-    console.log(this.movieInfo)
+    this.movieId = this.activatedRoute.snapshot.params['id']
 
-    this.apiService.getImages(this.movieInfo.id).subscribe(data => {
+    this.apiService.getImages(this.movieId).subscribe(data => {
       this.movieImages = data.backdrops
       this.getImageByAspectRatio(this.movieImages)
     })
 
-    this.apiService.getById(this.movieInfo.id).subscribe(data => {
-      console.log(data)
+    this.apiService.getById(this.movieId).subscribe(data => {
       this.movieInfo = data
       this.updateLanguages(data.spoken_languages)
     })
-
-
   }
 
   private getImageByAspectRatio(movieImages: MovieImages[]) {
